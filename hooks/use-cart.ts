@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 interface CartStore {
   items: Product[];
   addItem: (data: Product) => void;
-  removeitem: (id: string) => void;
+  removeItem: (id: string) => void;
   removeAll: () => void;
 }
 
@@ -26,7 +26,7 @@ const useCart = create(
         set({ items: [...get().items, data] });
         toast.success("Item added to cart.");
       },
-      removeitem: (id: string) => {
+      removeItem: (id: string) => {
         set({ items: [...get().items.filter((item) => item.id !== id)] });
         toast.success("Item removed from the cart.");
       },
